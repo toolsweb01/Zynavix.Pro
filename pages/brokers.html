@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Broker Partners - Zynavix PRO</title>
+    <meta name="description" content="Explore premium CPA broker partnerships with competitive payouts and high-converting offers curated by Zynavix PRO.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://unpkg.com/splitting@1.0.6/dist/splitting.css" rel="stylesheet">
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    
+    <style>
+        :root {
+            --navy: #0A2E6B;
+            --orange: #FF6A00;
+            --light-bg: #F7F9FC;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light-bg);
+        }
+        
+        .arabic {
+            font-family: 'Cairo', 'Noto Kufi Arabic', sans-serif;
+            direction: rtl;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--orange), #ff8533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 46, 107, 0.15);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--orange);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--orange);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .rtl {
+            direction: rtl;
+        }
+        
+        .rtl .nav-link::after {
+            left: auto;
+            right: 0;
+        }
+        
+        .broker-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .broker-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange), #ff8533);
+        }
+        
+        .conversion-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(16, 185, 129, 0.9);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <a href="../index.html">
+                        <img src="../assets/logo.png" alt="Zynavix PRO" class="h-10 w-auto">
+                    </a>
+                    <span class="text-xl font-bold text-gray-900">Zynavix PRO</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="nav-link text-gray-700 hover:text-orange-500">Home</a>
+                    <a href="about.html" class="nav-link text-gray-700 hover:text-orange-500">About</a>
+                    <a href="services.html" class="nav-link text-gray-700 hover:text-orange-500">Services</a>
+                    <a href="brokers.html" class="nav-link text-orange-500 font-semibold">Brokers</a>
+                    <a href="dashboard.html" class="nav-link text-gray-700 hover:text-orange-500">Dashboard</a>
+                    <a href="portfolio.html" class="nav-link text-gray-700 hover:text-orange-500">Portfolio</a>
+                    <a href="contact.html" class="nav-link text-gray-700 hover:text-orange-500">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="langToggle" class="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                        عربي
+                    </button>
+                    <button class="md:hidden p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                    Premium <span class="text-gradient">Broker Partners</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Exclusive partnerships with top-tier brokers offering competitive CPA payouts, high-converting offers, 
+                    and proven conversion rates across multiple financial verticals.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                        Start Promoting
+                    </a>
+                    <a href="services.html" class="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition-all">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Broker Overview Stats -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="text-4xl lg:text-5xl font-bold text-orange-500 mb-2">4</div>
+                    <div class="text-gray-600 font-semibold">Premium Brokers</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl lg:text-5xl font-bold text-orange-500 mb-2">$3,000</div>
+                    <div class="text-gray-600 font-semibold">Average CPA</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl lg:text-5xl font-bold text-orange-500 mb-2">14.2%</div>
+                    <div class="text-gray-600 font-semibold">Avg Conversion Rate</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl lg:text-5xl font-bold text-orange-500 mb-2">95%</div>
+                    <div class="text-gray-600 font-semibold">Client Retention</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Brokers -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Featured <span class="text-gradient">Partnerships</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Handpicked broker partnerships with proven track records and exceptional conversion rates
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Broker 1: Premium Finance -->
+                <div class="broker-card card-hover bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="relative h-48 bg-gradient-to-br from-blue-600 to-blue-800">
+                        <div class="conversion-badge">15.2% Conversion</div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-3xl font-bold mb-2">Premium Finance</h3>
+                                <p class="text-xl opacity-90">$850 CPA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900">Premium Finance Broker</h3>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">Active</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            High-converting finance offers targeting premium investors and traders. 
+                            Specialized in wealth management and investment advisory services with excellent retention rates.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                <div class="text-2xl font-bold text-blue-600">$850</div>
+                                <div class="text-sm text-gray-600">CPA Payout</div>
+                            </div>
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <div class="text-2xl font-bold text-green-600">15.2%</div>
+                                <div class="text-sm text-gray-600">Conversion Rate</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Premium investor targeting</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">High retention rates</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Multi-language support</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="broker1.html" class="flex-1 bg-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                                View Landing Page
+                            </a>
+                            <a href="contact.html" class="flex-1 bg-orange-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                                Start Promotion
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Broker 2: Crypto Trading -->
+                <div class="broker-card card-hover bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="relative h-48 bg-gradient-to-br from-orange-600 to-red-600">
+                        <div class="conversion-badge">12.8% Conversion</div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-3xl font-bold mb-2">Crypto Trade</h3>
+                                <p class="text-xl opacity-90">$650 CPA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900">Crypto Trading Platform</h3>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Trending</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Leading cryptocurrency trading platform with advanced trading tools and educational resources. 
+                            Perfect for crypto enthusiasts and professional traders seeking comprehensive market access.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="text-center p-4 bg-orange-50 rounded-lg">
+                                <div class="text-2xl font-bold text-orange-600">$650</div>
+                                <div class="text-sm text-gray-600">CPA Payout</div>
+                            </div>
+                            <div class="text-center p-4 bg-red-50 rounded-lg">
+                                <div class="text-2xl font-bold text-red-600">12.8%</div>
+                                <div class="text-sm text-gray-600">Conversion Rate</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Advanced trading tools</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Educational resources</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Multi-currency support</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="broker2.html" class="flex-1 bg-orange-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
+                                View Landing Page
+                            </a>
+                            <a href="contact.html" class="flex-1 bg-orange-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                                Start Promotion
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Broker 3: Forex Pro -->
+                <div class="broker-card card-hover bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="relative h-48 bg-gradient-to-br from-purple-600 to-indigo-600">
+                        <div class="conversion-badge">18.5% Conversion</div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-3xl font-bold mb-2">Forex Pro</h3>
+                                <p class="text-xl opacity-90">$750 CPA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900">Professional Forex Trading</h3>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">High Retention</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Professional forex trading platform with comprehensive market analysis tools and risk management features. 
+                            Ideal for serious forex traders and institutional clients.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="text-center p-4 bg-purple-50 rounded-lg">
+                                <div class="text-2xl font-bold text-purple-600">$750</div>
+                                <div class="text-sm text-gray-600">CPA Payout</div>
+                            </div>
+                            <div class="text-center p-4 bg-indigo-50 rounded-lg">
+                                <div class="text-2xl font-bold text-indigo-600">18.5%</div>
+                                <div class="text-sm text-gray-600">Conversion Rate</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Professional tools</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Risk management</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Institutional grade</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="broker3.html" class="flex-1 bg-purple-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                                View Landing Page
+                            </a>
+                            <a href="contact.html" class="flex-1 bg-orange-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                                Start Promotion
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Broker 4: Investment Plus -->
+                <div class="broker-card card-hover bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="relative h-48 bg-gradient-to-br from-green-600 to-teal-600">
+                        <div class="conversion-badge">16.7% Conversion</div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-3xl font-bold mb-2">Investment Plus</h3>
+                                <p class="text-xl opacity-90">$950 CPA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900">Investment Platform</h3>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Premium</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Comprehensive investment platform offering multiple asset classes including stocks, bonds, ETFs, and commodities. 
+                            Perfect for diversified investment strategies and portfolio management.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <div class="text-2xl font-bold text-green-600">$950</div>
+                                <div class="text-sm text-gray-600">CPA Payout</div>
+                            </div>
+                            <div class="text-center p-4 bg-teal-50 rounded-lg">
+                                <div class="text-2xl font-bold text-teal-600">16.7%</div>
+                                <div class="text-sm text-gray-600">Conversion Rate</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Multiple asset classes</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Portfolio management</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Research tools</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="broker4.html" class="flex-1 bg-green-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                                View Landing Page
+                            </a>
+                            <a href="contact.html" class="flex-1 bg-orange-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                                Start Promotion
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Brokers -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Why Choose Our <span class="text-gradient">Broker Partners</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Every partnership is carefully selected and tested to ensure maximum conversion potential and client satisfaction
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Verified Performance</h3>
+                    <p class="text-gray-600">
+                        All brokers are thoroughly tested and verified for conversion rates, payout reliability, 
+                        and client satisfaction before partnership approval.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Competitive Payouts</h3>
+                    <p class="text-gray-600">
+                        Industry-leading CPA payouts with flexible payment terms and bonus structures 
+                        for high-volume partners and exceptional performance.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">High Conversion Rates</h3>
+                    <p class="text-gray-600">
+                        Optimized landing pages, user experience, and conversion funnels result in 
+                        above-average conversion rates across all broker partnerships.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Real-time Tracking</h3>
+                    <p class="text-gray-600">
+                        Advanced tracking and attribution systems provide real-time insights into campaign performance 
+                        and conversion optimization opportunities.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Dedicated Support</h3>
+                    <p class="text-gray-600">
+                        Personal account management and dedicated support teams ensure smooth campaign execution 
+                        and quick resolution of any issues.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-100 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Global Reach</h3>
+                    <p class="text-gray-600">
+                        Access to international markets with localized content, payment methods, 
+                        and support for multiple languages and currencies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Ready to Promote Premium Offers?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Join hundreds of successful affiliates promoting our premium broker partnerships. 
+                    Get access to high-converting offers, competitive payouts, and dedicated support.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                        Get Started Today
+                    </a>
+                    <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all">
+                        Learn About Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="../assets/logo.png" alt="Zynavix PRO" class="h-10 w-auto">
+                        <span class="text-xl font-bold">Zynavix PRO</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Professional CPA marketing expert delivering measurable results through data-driven strategies 
+                        and conversion-focused campaigns across global markets.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="mailto:zynavixpro@gmail.com" class="text-gray-400 hover:text-orange-500 transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-500 transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-orange-500 transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-orange-500 transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-orange-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-orange-500 transition-colors">Campaign Management</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-orange-500 transition-colors">Landing Page Optimization</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-orange-500 transition-colors">Traffic Management</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-orange-500 transition-colors">Analytics & Reporting</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Zynavix PRO. All rights reserved. | Professional CPA Marketing Expert
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Language toggle functionality
+        const langToggle = document.getElementById('langToggle');
+        let isArabic = false;
+
+        langToggle.addEventListener('click', () => {
+            isArabic = !isArabic;
+            document.body.classList.toggle('arabic', isArabic);
+            document.body.classList.toggle('rtl', isArabic);
+            langToggle.textContent = isArabic ? 'English' : 'عربي';
+            
+            // Update text content for Arabic
+            if (isArabic) {
+                document.querySelectorAll('[data-ar]').forEach(el => {
+                    el.textContent = el.getAttribute('data-ar');
+                });
+            } else {
+                location.reload(); // Reset to English
+            }
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/98');
+                navbar.classList.remove('bg-white/95');
+            } else {
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white/98');
+            }
+        });
+    </script>
+</body>
+</html>
