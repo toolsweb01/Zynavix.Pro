@@ -33,7 +33,18 @@
 
         .hero { background: linear-gradient(135deg, #F0F4F8 0%, #E6E9FF 100%); padding: 80px 0; }
         .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .book-cover { width: 100%; max-width: 340px; border-radius: 4px; box-shadow: 20px 20px 50px rgba(0,0,0,0.2); display: block; margin: 0 auto; transition: var(--transition); }
+        
+        /* تصميم مكان الصورة لضمان ظهورها */
+        .book-container { position: relative; width: 100%; max-width: 340px; margin: 0 auto; }
+        .book-cover { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 4px; 
+            box-shadow: 20px 20px 50px rgba(0,0,0,0.2); 
+            display: block; 
+            transition: var(--transition);
+            background-color: #ddd; /* لون احتياطي في حال تأخر تحميل الصورة */
+        }
         .book-cover:hover { transform: translateY(-10px) rotate(-1deg); }
 
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 36px; font-size: 1.1rem; font-weight: 700; border-radius: var(--border-radius); cursor: pointer; border: none; text-decoration: none; transition: var(--transition); }
@@ -57,15 +68,15 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div>
-                    <img src="https://m.media-amazon.com/images/I/81bc-5vLXXL._AC_UF1000,1000_QL80_.jpg" alt="Principles of Economics" class="book-cover">
+                <div class="book-container">
+                    <img src="book-cover.jpg" alt="Principles of Economics Book Cover" class="book-cover">
                 </div>
                 <div>
                     <h1 style="font-size: 2.8rem; margin-bottom: 15px;">Principles of Economics <br><span style="color: var(--primary-color);">(9th Edition)</span></h1>
                     <p style="font-size: 1.1rem; color: #444;">By <strong>N. Gregory Mankiw</strong>. Access the world's most popular economics textbook for free.</p>
                     <div class="book-isbn"><i class="fas fa-file-pdf"></i> PDF Version | 864 Pages | Instant Access</div>
                     
-                    <p style="margin-bottom: 30px;">This edition provides an unbeatable introduction to economics, used by top universities globally. Master the core principles with ease.</p>
+                    <p style="margin-bottom: 30px;">Download the full textbook. Used by top universities globally for Economics students.</p>
                     
                     <button class="btn btn-primary" onclick="og_load();">
                         <i class="fas fa-unlock-alt"></i> Get Full Digital Copy
