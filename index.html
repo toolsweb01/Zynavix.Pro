@@ -3,92 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zynavix - Principles of Economics (9th Edition)</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <noscript><meta http-equiv="refresh" content="0;url=https://applocked.store/noscript" /></noscript>
-    <script type="text/javascript" id="ogjs" src="https://applocked.store/cl/js/grr44d"></script>
-
+    <title>Free Download | The Magic of Thinking Big</title>
     <style>
         :root {
-            --primary-color: #4A6FA5;
-            --secondary-color: #6B5B95;
-            --text-dark: #2D3748;
-            --bg-light: #F8F9FA;
-            --border-radius: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary: #d32f2f; /* لون أحمر يناسب غلاف الكتاب */
+            --dark: #1e293b;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        
-        header { background: #fff; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary-color); text-decoration: none; }
-
-        .hero { background: linear-gradient(135deg, #F0F4F8 0%, #E6E9FF 100%); padding: 80px 0; }
-        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        
-        /* تصميم مكان الصورة لضمان ظهورها */
-        .book-container { position: relative; width: 100%; max-width: 340px; margin: 0 auto; }
-        .book-cover { 
-            width: 100%; 
-            height: auto; 
-            border-radius: 4px; 
-            box-shadow: 20px 20px 50px rgba(0,0,0,0.2); 
-            display: block; 
-            transition: var(--transition);
-            background-color: #ddd; /* لون احتياطي في حال تأخر تحميل الصورة */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
-        .book-cover:hover { transform: translateY(-10px) rotate(-1deg); }
-
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 36px; font-size: 1.1rem; font-weight: 700; border-radius: var(--border-radius); cursor: pointer; border: none; text-decoration: none; transition: var(--transition); }
-        .btn-primary { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; box-shadow: 0 10px 20px rgba(74, 111, 165, 0.2); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(74, 111, 165, 0.3); }
-
-        .book-isbn { display: inline-flex; align-items: center; gap: 8px; background: rgba(74, 111, 165, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: var(--primary-color); font-weight: 700; margin: 20px 0; }
-
-        @media (max-width: 768px) { .hero-content { grid-template-columns: 1fr; text-align: center; } }
+        .container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+        .book-img {
+            width: 180px;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: var(--dark);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .author {
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        p {
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+            background-color: #b71c1c;
+        }
+        .status {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #10b981;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">zynavix</a>
-            <button class="btn btn-primary" onclick="og_load();" style="padding: 10px 20px; font-size: 0.9rem;">Download PDF</button>
-        </nav>
-    </header>
+<div class="container">
+    <img src="https://m.media-amazon.com/images/I/516L-yK5pTL._SX329_BO1,204,203,200_.jpg" alt="The Magic of Thinking Big" class="book-img">
+    
+    <h1>The Magic of Thinking Big</h1>
+    <span class="author">by David J. Schwartz, PhD</span>
+    
+    <p>The true secret of success! Learn how to earn more, lead fearlessly, and live a happier life. Download your <b>Free PDF Copy</b> now.</p>
+    
+    <a href="YOUR_CPA_LINK_HERE" class="btn">DOWNLOAD FREE PDF</a>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="book-container">
-                    <img src="book-cover.jpg" alt="Principles of Economics Book Cover" class="book-cover">
-                </div>
-                <div>
-                    <h1 style="font-size: 2.8rem; margin-bottom: 15px;">Principles of Economics <br><span style="color: var(--primary-color);">(9th Edition)</span></h1>
-                    <p style="font-size: 1.1rem; color: #444;">By <strong>N. Gregory Mankiw</strong>. Access the world's most popular economics textbook for free.</p>
-                    <div class="book-isbn"><i class="fas fa-file-pdf"></i> PDF Version | 864 Pages | Instant Access</div>
-                    
-                    <p style="margin-bottom: 30px;">Download the full textbook. Used by top universities globally for Economics students.</p>
-                    
-                    <button class="btn btn-primary" onclick="og_load();">
-                        <i class="fas fa-unlock-alt"></i> Get Full Digital Copy
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="padding: 40px 0; text-align: center; background: #fff; margin-top: 50px;">
-        <p>&copy; 2026 zynavix. All rights reserved.</p>
-    </footer>
+    <div class="status">
+        <span style="width: 10px; height: 10px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+        Instant Download Available
+    </div>
+</div>
 
 </body>
 </html>
